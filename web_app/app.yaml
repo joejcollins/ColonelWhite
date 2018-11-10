@@ -1,5 +1,5 @@
 runtime: php72
 
 handlers:
-- url: /.*
-  script: phpinfo.php
+- url: .*
+  script: auto
