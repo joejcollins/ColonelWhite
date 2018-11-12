@@ -39,6 +39,13 @@ The plan is to get this to work on GAE so run with this:
 
     dev_appserver.py --php_executable_path=/usr/bin/php app.yaml
 
+    gcloud info --format='value(installation.sdk_root)'
+
+    dev_appserver.py --php_executable_path=/usr/bin/php --php_gae_extension_path=[PATH_TO_APPENGINE_EXTENSION] app.yaml
+
+
+gae_runtime_module.so
+
 But get this error
 
     ERROR 2018-11-12 06:05:27,828 module.py:1652] The PHP runtime requires the "bccomp" function, which is not defined.
