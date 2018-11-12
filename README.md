@@ -83,6 +83,7 @@ The php.ini is served from the application and currently looke like this, so mig
 ...so I cut it down to this
 
     output_buffering = "On"
+    display_errors = On
     date.timezone = America/New_York
     extension=bcmath.so
     extension=curl.so
