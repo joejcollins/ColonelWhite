@@ -97,3 +97,9 @@ Now I get these warnings
 
 So I think the php.ini is irrelevant.
 
+
+
+
+# Try Azure
+
+https://crap.scm.azurewebsites.net/
