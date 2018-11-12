@@ -96,11 +96,16 @@ Now I get these warnings
     PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
     PHP Warning:  Module 'curl' already loaded in Unknown on line 0
 
-So I think the php.ini is irrelevant.
+So I think the php.ini is irrelevant but I reduced it to
 
+    output_buffering = "Off"
+    display_errors = On
+    date.timezone = America/New_York
 
-
+Works on GAE but not locally.
 
 # Try Azure
+
+https://docs.microsoft.com/en-gb/azure/app-service/web-sites-php-configure#how-to-enable-extensions-in-the-default-php-runtime
 
 https://crap.scm.azurewebsites.net/
