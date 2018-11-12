@@ -112,3 +112,15 @@ https://crap.scm.azurewebsites.net/
 
 
 PHP_INI_SCAN_DIR and value d:\home\site\ini
+
+D:\home\site\ini>type extensions.ini
+; Enable Extensions
+extension=D:\home\site\ext\php_sqlite3.dll
+extension=D:\home\site\ext\php_pdo_sqlite.dll
+D:\home\site\ini>cd ..
+
+D:\home\site>cd ext
+
+D:\home\site\ext>ls
+php_pdo_sqlite.dll
+php_sqlite3.dll
