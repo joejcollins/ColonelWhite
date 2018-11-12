@@ -109,3 +109,6 @@ Works on GAE but not locally.
 https://docs.microsoft.com/en-gb/azure/app-service/web-sites-php-configure#how-to-enable-extensions-in-the-default-php-runtime
 
 https://crap.scm.azurewebsites.net/
+
+
+PHP_INI_SCAN_DIR and value d:\home\site\ini
