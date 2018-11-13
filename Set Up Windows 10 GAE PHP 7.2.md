@@ -1,6 +1,8 @@
-# GAE and PHP on Windows 10
+# Windows 10, GAE and PHP 7.2
 
-I could get it to work on WSL.  All the components would install but nothing was delivered.  So the plan is to try an install on Windows.  This is the current state of the gcloud components on my Windows 10.
+Python 2.7 needs to be installed to run the GAE app server.
+
+Check the installed gcloud components
 
 	C:\>gcloud components list
 	Your current Cloud SDK version is: 223.0.0
@@ -32,30 +34,35 @@ I could get it to work on WSL.  All the components would install but nothing was
 	| Installed        | Cloud Storage Command Line Tool                      | gsutil                   |   3.5 MiB |
 	+------------------+------------------------------------------------------+--------------------------+-----------+
 	
-Python 2.7 is installed but not Python 3 because you need Python 2.7 to run the Python 3 stuff.  Seems a bit half arsed to me.
+and install the PHP Extensions if necessary.
 
-The PHP version on 
+	C:>gcloud components install app-engine-php
+
+Install the same version of PHP 7.2 that is used on Azure Web Apps. 
 
 	choco install php --version 7.2.10
-	
 
+## Windows Only
 
+Check if it runs with the built in PHP server.
 
-C:>gcloud components install app-engine-php
+	php -S localhost:8080
 
+## Windows and GAE
 
-	
-Make sure that the extensions are compatible with default version of PHP and are VC9 and non-thread-safe (nts) compatible.
+Then test with the GAE app server (which shouldn't work, since the sqlite drivers cannot be found to be loaded).
 
+	dev_appserver.py --php_executable_path=C:\tools\php72\php-cgi.exe --support_datastore_emulator=False app.yaml
 
+GAE expects a local php.ini in development so rename `php.ini.WindowsGAE` to `php.ini` and edit appropriately.  Then the sqlite error should disappear.
 
+## Windows Azure.
 
-<https://colonel-white.scm.azurewebsites.net/>
+Commits to the develop branch are deployed to <https://colonel-white.azurewebsites.net/>.  This is an Azure App Service running PHP 7.2.  The PHP 7.2 versions does not come with the sqlite drivers.  (The PHP 5.6 version does, go figure).  The sqlite extensions are in /ext and /ini contains an additional extensions.ini file which locates the two dll's on with Windows Azure file system <https://docs.microsoft.com/en-gb/azure/app-service/web-sites-php-configure#how-to-enable-extensions-in-the-default-php-runtime>.  The Web App Service configuration `PHP_INI_SCAN_DIR=d:\home\site\wwwroot\ini`.  Be advised that the extensions (dll's) come from (<https://windows.php.net/downloads/releases/archives/> php-7.2.10-nts-Win32-VC15-x86.zip) and are:
 
+* for PHP version 7.2.10 to match the Azure version
+* Non Thread Safe (nts) for reasons I don't understand
+* Win32-x86 not 64-bit
+* VC15
 
-
-
-<https://windows.php.net/downloads/releases/archives/>
-
-
-dev_appserver.py --php_executable_path=C:\tools\php72\php-cgi --support_datastore_emulator=False app.yaml
+Details and logs for the Azure App Service and be seen at <https://colonel-white.scm.azurewebsites.net/>.

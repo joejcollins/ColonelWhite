@@ -11,4 +11,4 @@ steps:
     sudo apt-get update && sudo apt-get install google-cloud-sdk
     echo ${GOOGLE_CLIENT_SECRET} > client-secret.json
     gcloud auth activate-service-account --key-file client-secret.json
-    gcloud --quiet --verbosity=error app deploy ./web_app/app.yaml --no-promote --version=2 --project $CLOUDSDK_CORE_PROJECT
+    gcloud --quiet --verbosity=error app deploy ./app.yaml --no-promote --version=2 --project $CLOUDSDK_CORE_PROJECT

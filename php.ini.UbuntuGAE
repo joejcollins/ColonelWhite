@@ -1,6 +1,5 @@
-date.timezone = America/New_York
 extension=bcmath.so
 extension=curl.so
 extension=gd.so
 extension=gettext.so
-extension=soap.so
+extension=zip.so
