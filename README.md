@@ -118,7 +118,7 @@ https://docs.microsoft.com/en-gb/azure/app-service/web-sites-php-configure#how-t
 https://crap.scm.azurewebsites.net/
 
 
-PHP_INI_SCAN_DIR and value d:\home\site\ini
+PHP_INI_SCAN_DIR and value d:\home\site\wwwroot\ini
 
 D:\home\site\ini>type extensions.ini
 ; Enable Extensions
