@@ -1,10 +1,11 @@
 runtime: php72
 
 handlers:
-# Serve your app through a front controller at index.php
-- url: /
-  script: index.php
-
 - url: /phpinfo.php
   script: phpinfo.php
+# Serve your app through a front controller at index.php
+- url: .*
+  script: index.php
+
+
   
