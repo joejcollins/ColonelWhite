@@ -1,5 +1,5 @@
 <?php
-// auto is the entry point for GAE applications
+// index.php is the entry point for normal applications
 switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
     case '/':
         require 'data.php';
