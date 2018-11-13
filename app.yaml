@@ -1,11 +1,9 @@
 runtime: php72
+# https://cloud.google.com/appengine/docs/standard/php7/config/appref#handlers_element
 
 handlers:
-- url: /phpinfo.php
+- url: /i
   script: phpinfo.php
 # Serve your app through a front controller at index.php
 - url: .*
   script: index.php
-
-
-  
