@@ -1,2 +1,4 @@
+# Local php.ini for GAE
+php.ini
 # PHP Composer dependencies:
 vendor/

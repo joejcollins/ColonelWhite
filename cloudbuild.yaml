@@ -1,4 +1,0 @@
-# Deploy
-steps:
-- name: gcr.io/cloud-builders/gcloud
-  args: ['source', 'repos', 'clone', 'default']

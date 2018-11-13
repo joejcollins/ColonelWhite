@@ -38,7 +38,12 @@ The PHP version on
 
 	choco install php --version 7.2.10
 	
-	
+
+
+
+C:>gcloud components install app-engine-php
+
+
 	
 Make sure that the extensions are compatible with default version of PHP and are VC9 and non-thread-safe (nts) compatible.
 
@@ -51,3 +56,6 @@ Make sure that the extensions are compatible with default version of PHP and are
 
 
 <https://windows.php.net/downloads/releases/archives/>
+
+
+dev_appserver.py --php_executable_path=C:\tools\php72\php-cgi --support_datastore_emulator=False app.yaml

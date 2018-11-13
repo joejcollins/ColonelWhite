@@ -14,9 +14,15 @@ $dbh = null;
 ?>
 ```
 
+Install php
+
+    apt-get install php
+    php -v
+    sudo apt-get install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml php-bcmath php-sqlite3 libapache2-mod-php php-cgi
+
 So install sqlite3 and create a database.
 
-    sudo apt install sqlite3 php-sqlite3
+    sudo apt-get install sqlite3 php-sqlite3
 
 Create a database like this
 
@@ -37,7 +43,7 @@ Then run the built in server to confirm it works.
 
 The plan is to get this to work on GAE so run with this:
 
-    dev_appserver.py --php_executable_path=/usr/bin/php app.yaml
+    dev_appserver.py --php_executable_path=/usr/bin/php  app.yaml
 
     gcloud info --format='value(installation.sdk_root)'
 
@@ -111,6 +117,12 @@ So I think the php.ini is irrelevant but I reduced it to
 
 Works on GAE but not locally.
 
+C:>gcloud components install app-engine-php
+
+
+dev_appserver.py --php_executable_path=/usr/bin/php-cgi app.yaml --support_datastore_emulator=False app.yaml
+
+
 # Try Azure
 
 https://docs.microsoft.com/en-gb/azure/app-service/web-sites-php-configure#how-to-enable-extensions-in-the-default-php-runtime
@@ -134,3 +146,11 @@ php_sqlite3.dll
 
 
 https://windows.php.net/downloads/releases/archives/
+
+
+Make sure that the extensions are compatible with default version of PHP and are VC9 and non-thread-safe (nts) compatible.
+
+And 32 Bit
+
+
+https://colonel-white.azurewebsites.net/

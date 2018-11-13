@@ -11,6 +11,9 @@ handlers:
   upload: .+\.(gif|png|jpg)$
 
 # Serve your app through a front controller at index.php or public/index.php.
-- url: .*
-  script: auto
+- url: /
+  script: index.php
+
+- url: /i
+  script: phpinfo.php
   
