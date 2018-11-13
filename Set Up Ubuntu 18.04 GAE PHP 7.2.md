@@ -94,11 +94,11 @@ And then get the components.
     │ Installed     │ gcloud app Python Extensions                         │ app-engine-python        │   6.2 MiB │
     └───────────────┴──────────────────────────────────────────────────────┴──────────────────────────┴───────────┘
 
-Run the Google App Engine version
+Run the Google App Engine version (and watch if fail)
 
-     dev_appserver.py --php_execable_path=/usr/bin/php-cgi --support_datastore_emulator=False ./app.yaml
+     dev_appserver.py --php_executable_path=/usr/bin/php-cgi --support_datastore_emulator=False ./app.yaml
 
-Note that the php-cgi is used not the plain php engine.
+GAE expects a local php.ini in development so rename `php.ini.UbuntuGAE` to `php.ini` and edit appropriately.  It should then load up the right extensions.  FYI note that the php-cgi is used not the plain php engine.
 
 ## Deploy the Google App Engine
 
