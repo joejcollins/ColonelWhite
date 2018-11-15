@@ -51,8 +51,12 @@ Then run the built in server to confirm it works.  This is just running the buil
 
 The PHP extensions to GAE are not available via apt-get.  The latest version for Linux is available at <https://cloud.google.com/sdk/docs/#linux>.  So download, up pack it to /home/user and install.
 
+    cd /home/user
     curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-224.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
-    tar xvzf google-cloud-sdk.tar.gz
+    tar zxvf google-cloud-sdk.tar.gz google-cloud-sdk
+    ./google-cloud-sdk/install.sh
+    gcloud components list
+    gcloud components install app-engine-php
     ./google-cloud-sdk/install.sh
 
 Confirm the location like this:
