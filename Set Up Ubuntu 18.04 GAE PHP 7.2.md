@@ -4,7 +4,7 @@
 
 1. Windows Settings > Updates & Security > For Developers > True
 2. Control Panel > Programs and Features > Turn Windows features on or off > Windows Subsystem for Linux > True
-3. Microsoft store > Ubuntu 16.04 > Get
+3. Microsoft store > Ubuntu 18.04 > Get
 
 Set the username and password
 
